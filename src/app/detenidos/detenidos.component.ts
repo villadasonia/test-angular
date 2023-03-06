@@ -29,7 +29,7 @@ export class DetenidosComponent  {
 
     
     this.cargarMenu()
-    //this.CalculateAge('1990-03-06')
+    
     console.log(this.edad)
     
     
@@ -57,10 +57,11 @@ export class DetenidosComponent  {
   cargarMenu(){
     this.httpApiService.getDetenciones()
     .subscribe((data)=>{
-    this.detenciones=data
-    this.detenciones.map( i=> this.CalculateAge(i.persona.fecha_nacimiento))
-    console.log([this.edad])
+    this.detenciones=data;
+    this.edad=this.detenciones.map( i=> this.httpApiService.CalculateAge(i.persona.fecha_nacimiento)
+    )
 
+    
     
     })
     
@@ -81,19 +82,19 @@ export class DetenidosComponent  {
   // }
 
 
-  CalculateAge(fecha_nacimiento:string): any {
-    const today: Date = new Date();
-    const birthDate: Date = new Date(fecha_nacimiento);
-    var edad: number = today.getFullYear() - birthDate.getFullYear();
-    const month: number = today.getMonth() - birthDate.getMonth();
-    if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
-        edad--;
-    }
-      this.edad= edad;
-  
+//   CalculateAge(fecha_nacimiento:string): any {
+//     const today: Date = new Date();
+//     const birthDate: Date = new Date(fecha_nacimiento);
+//     var edad: number = today.getFullYear() - birthDate.getFullYear();
+//     const month: number = today.getMonth() - birthDate.getMonth();
+//     if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
+//         edad--;
+//     }
+//       return edad;
+    
     
   
-}
+// }
 
 
 

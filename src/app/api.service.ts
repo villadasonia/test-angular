@@ -20,7 +20,20 @@ export class ApiService {
   }
 
   
- 
+  CalculateAge(fecha_nacimiento:string): any {
+    const today: Date = new Date();
+    const birthDate: Date = new Date(fecha_nacimiento);
+    var edad: number = today.getFullYear() - birthDate.getFullYear();
+    const month: number = today.getMonth() - birthDate.getMonth();
+    if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
+        edad--;
+    }
+      return edad;
+    
+    
+  
+}
 
     
 }
+

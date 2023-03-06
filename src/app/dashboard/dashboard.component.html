@@ -14,12 +14,12 @@
 
               <mat-form-field >
                   <mat-label>Total de Menores</mat-label>
-                  <input matInput placeholder="Fecha" value=>
+                  <input matInput value={{cantidad_de_menores}}>
               </mat-form-field>
 
               <mat-form-field >
                   <mat-label>Detencion más Reciente</mat-label>
-                  <input matInput placeholder="Nombre" value=>
+                  <input matInput  value=>
               </mat-form-field>
 
               <div class="container-title">
@@ -43,10 +43,11 @@
               
               <mat-form-field *ngIf="this.click==true">
                 <mat-label>Observaciones :</mat-label>
-                <input matInput placeholder="observaciones" value={{observaciones}}>
+                <textarea matInput placeholder="observaciones" required id="observaciones"  type="text" ng-model="observaciones"></textarea>
+                <!-- <input matInput placeholder="observaciones" required id="observaciones" name="observaciones" type="text"value={{observaciones}}> -->
               </mat-form-field>
 
-           
+              
           
               <button *ngIf="this.click==false" mat-raised-button color="primary" (click)="onClick()" >Generar Reporte</button>
               <button *ngIf="this.click==true" mat-raised-button color="primary" (click)="guardarReporte()" >Guardar Reporte</button>

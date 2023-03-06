@@ -14,6 +14,7 @@ import swal from 'sweetalert';
 export class DashboardComponent {
   detenciones:Detenidos[]=[];
   total_detenciones:number = 0;
+  cantidad_de_menores:any;
   total_por_dependencia23:any;
   total_por_dependencia24:any;
   total_por_dependencia9:any;
@@ -26,6 +27,7 @@ export class DashboardComponent {
 
   ngOnInit(){
     this.calcularReporte()
+    console.log(this.observaciones)
    
 
   }
@@ -42,14 +44,20 @@ export class DashboardComponent {
     .subscribe((response)=>{
       this.detenciones = response;
       this.total_detenciones=this.detenciones.length;
+      let edad=this.detenciones.map( i=> this.httpApiService.CalculateAge(i.persona.fecha_nacimiento));
+      this.cantidad_de_menores=edad.filter(i=>i<18).length;
+
             
       this.total_por_dependencia23=this.detenciones.filter( i=>i.dependencia.dependencia_id ==23).length ;
       this.total_por_dependencia24=this.detenciones.filter( i=>i.dependencia.dependencia_id ==24).length;
       this.total_por_dependencia9=this.detenciones.filter( i=>i.dependencia.dependencia_id ==9).length;
+
       
-      console.log(this.total_por_dependencia23,this.total_por_dependencia24,this.total_por_dependencia9);
+      console.log(this.total_por_dependencia23,this.total_por_dependencia24,this.total_por_dependencia9,this.cantidad_de_menores);
     })
   }
+
+
 
   onClick(){
     this.click=true;
@@ -62,7 +70,8 @@ export class DashboardComponent {
       dependencia1:this.total_por_dependencia23,
       dependencia2:this.total_por_dependencia24,
       dependencia3:this.total_por_dependencia9,
-      observaciones:this.observaciones
+      observaciones:this.observaciones,
+
 
     }
     localStorage.setItem('Rep_Det',JSON.stringify(data))
