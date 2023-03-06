@@ -1,0 +1,50 @@
+mat-table {
+  width: auto;
+}
+
+td,th {
+  width: 10%;
+  padding: 2px 10px;
+  height: 50px;
+  text-align: center;
+  margin:auto;
+  vertical-align: middle;  
+}
+
+.col-id{
+  width: 8%;
+}
+
+
+.cell{
+  height: 50px;text-align: center;
+  justify-content: center;
+  margin:auto;
+  vertical-align: middle;  
+}
+
+
+/* mat-table {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+
+.th{
+  width: 20%;
+  margin-top: 10px;
+}
+
+mat-header-row{
+  margin-top: 20px;
+} */
+
+.reDias{
+  background-color: red;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+

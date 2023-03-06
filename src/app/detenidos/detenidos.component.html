@@ -1,0 +1,81 @@
+<div  class="container" >
+    <mat-toolbar>
+        <span>Detenidos</span>
+    </mat-toolbar>
+    <mat-card>
+        <mat-table  [dataSource]="detenciones" class="mat-elevation-z8 " >
+           
+
+            <!-- <mat-form-field appearance="standard">
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Ingrese Filtro" #input>
+            </mat-form-field> -->
+   
+            <!-- Position Column -->
+            <ng-container matColumnDef="id" class ="col-id">
+            <th mat-header-cell *matHeaderCellDef class="cell"> ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.detencion_id}} </td>
+            </ng-container>
+
+            <!-- Symbol Column-->
+            <ng-container matColumnDef="fecha" >
+            <th mat-header-cell *matHeaderCellDef class="cell" > Fecha </th>
+            <td mat-cell *matCellDef="let element of sortData" > {{element.fecha | date: "dd/MM/YYYY hh:mm"}} </td>
+            </ng-container> 
+        
+            <!-- Weight Column -->
+            <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef class="cell"> NOMBRE </th>
+            <td mat-cell *matCellDef="let element">{{element.persona.nombre}}</td>
+            </ng-container> 
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="cantidad_dias" >    
+            <th mat-header-cell *matHeaderCellDef class="cell"> CANTIDAD DE DÍAS</th>
+            <td mat-cell *matCellDef="let element" >
+                <button mat-mini-fab [ngClass]="{'reDias':element.cantidad_dias >30}" color="white">
+                    {{element.cantidad_dias}}
+                  </button></td>
+            </ng-container>
+
+            <!-- Symbol Column-->
+            <ng-container matColumnDef="apellido">
+            <th mat-header-cell *matHeaderCellDef class="cell"> APELLIDO</th>
+            <td mat-cell *matCellDef="let element "> {{element.persona.apellido}} </td>
+            </ng-container> 
+
+            <!-- Symbol Column-->
+            <ng-container matColumnDef="dependencia">
+            <th mat-header-cell *matHeaderCellDef class="cell"> DEPENDENCIA</th>
+            <td mat-cell *matCellDef="let element"> {{element.dependencia.descripcion}} </td>
+            </ng-container> 
+
+            <!-- Symbol Column-->
+            <ng-container matColumnDef="delito">
+            <th mat-header-cell *matHeaderCellDef class="cell"> DELITO </th>
+            <td mat-cell *matCellDef="let element"> {{element.delito}} </td>
+            </ng-container> 
+
+             <!-- Symbol Column-->
+            <ng-container matColumnDef="acciones">
+            <th mat-header-cell *matHeaderCellDef class="cell"> ACCIONES </th>
+            <td mat-cell *matCellDef="let element  " >
+                 <a class="pointer" #tooltip="matTooltip" matTooltip="Detalle de detencion">
+                    
+                    <button  routerLink="/detalle-detenido/{{element.detencion_id}}">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"  >assignment</mat-icon>
+                    </button>
+                 </a> 
+            </td>
+            </ng-container> 
+
+            
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns; "></tr>
+          
+            
+        </mat-table>
+</mat-card>
+</div>
+<!-- <app-detalle-detenidos [detalle]="detalle"></app-detalle-detenidos> 
+   -->
