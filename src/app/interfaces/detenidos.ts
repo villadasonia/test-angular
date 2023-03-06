@@ -7,7 +7,7 @@ export interface Detenidos{
         numero_documento:number;
         nombre:string;
         apellido:string;
-        fecha_nacimiento:Date;
+        fecha_nacimiento:string;
         edad:number;
 
     }

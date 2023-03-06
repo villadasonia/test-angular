@@ -15,6 +15,7 @@ export class DetenidosComponent  {
 
   detenciones:Detenidos[]=[]
   detalle=0;
+  edad:any;
   
   displayedColumns: string[] = ['id','fecha', 'nombre','apellido','cantidad_dias','dependencia','delito','acciones'];
   
@@ -28,7 +29,10 @@ export class DetenidosComponent  {
 
     
     this.cargarMenu()
-    console.log(this.detalle)
+    //this.CalculateAge('1990-03-06')
+    console.log(this.edad)
+    
+    
     
          
     
@@ -54,12 +58,17 @@ export class DetenidosComponent  {
     this.httpApiService.getDetenciones()
     .subscribe((data)=>{
     this.detenciones=data
-    
+    this.detenciones.map( i=> this.CalculateAge(i.persona.fecha_nacimiento))
+    console.log([this.edad])
+
     
     })
+    
+    
  
+  }
+   
 
-   }
 
   
 
@@ -72,7 +81,7 @@ export class DetenidosComponent  {
   // }
 
 
-  CalculateAge(fecha_nacimiento:string): number {
+  CalculateAge(fecha_nacimiento:string): any {
     const today: Date = new Date();
     const birthDate: Date = new Date(fecha_nacimiento);
     var edad: number = today.getFullYear() - birthDate.getFullYear();
@@ -80,7 +89,8 @@ export class DetenidosComponent  {
     if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
         edad--;
     }
-    return edad;
+      this.edad= edad;
+  
     
   
 }

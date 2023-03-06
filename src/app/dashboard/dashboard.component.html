@@ -28,24 +28,28 @@
 
               <mat-form-field >
                   <mat-label>UNIDAD PENAL NRO 9 PASO DE LOS LIBRES:</mat-label>
-                  <input matInput placeholder="Apellido" value={{total_por_dependencia9}}>
+                  <input matInput placeholder="dependecia" value={{total_por_dependencia9}}>
               </mat-form-field>
 
               <mat-form-field >
                   <mat-label>COMISARÍA 2da. - CURUZU CUATIA	:</mat-label>
-                  <input matInput placeholder="fecha de nacimiento" value={{total_por_dependencia23}}>
+                  <input matInput placeholder="dependecia " value={{total_por_dependencia23}}>
               </mat-form-field>
               
               <mat-form-field >
                   <mat-label>COMISARÍA 1ra. ALCAIDÍA - CURUZU CUATIA :</mat-label>
                   <input matInput placeholder="dependencia" value={{total_por_dependencia23}}>
               </mat-form-field>
-
-           
+              
+              <mat-form-field *ngIf="this.click==true">
+                <mat-label>Observaciones :</mat-label>
+                <input matInput placeholder="observaciones" value={{observaciones}}>
+              </mat-form-field>
 
            
           
-              <button mat-raised-button color="primary" >Guardar Reporte</button>
+              <button *ngIf="this.click==false" mat-raised-button color="primary" (click)="onClick()" >Generar Reporte</button>
+              <button *ngIf="this.click==true" mat-raised-button color="primary" (click)="guardarReporte()" >Guardar Reporte</button>
   
           </div>
   </mat-card>

@@ -35,6 +35,7 @@ import { MatInputModule } from '@angular/material/input';
 import {DatePipe} from './datedesc.pipe';
 import { ReportesComponent } from './reportes/reportes.component'
 
+
 @NgModule({
   declarations: [
     AppComponent,
