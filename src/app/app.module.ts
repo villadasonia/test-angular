@@ -32,7 +32,8 @@ import { DetalleDetenidosComponent } from './detalle-detenidos/detalle-detenidos
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
-import {DatePipe} from './datedesc.pipe'
+import {DatePipe} from './datedesc.pipe';
+import { ReportesComponent } from './reportes/reportes.component'
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import {DatePipe} from './datedesc.pipe'
     DetenidosComponent,
     DetalleDetenidosComponent,
     DatePipe,
+    ReportesComponent,
 
   ],
   imports: [

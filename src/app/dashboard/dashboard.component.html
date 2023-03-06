@@ -1,4 +1,57 @@
-    <div class="container">
+<div>
+  <mat-toolbar class="container-title">
+      <span >Reportes de Detenciones </span>
+  </mat-toolbar>
+  <mat-card >
+      
+      <div class="container">
+         
+
+              <mat-form-field  style="margin-right: 20px;">
+                  <mat-label>Total de Detenciones</mat-label>
+                  <input matInput  value={{total_detenciones}}>
+              </mat-form-field>
+
+              <mat-form-field >
+                  <mat-label>Total de Menores</mat-label>
+                  <input matInput placeholder="Fecha" value=>
+              </mat-form-field>
+
+              <mat-form-field >
+                  <mat-label>Detencion más Reciente</mat-label>
+                  <input matInput placeholder="Nombre" value=>
+              </mat-form-field>
+
+              <div class="container-title">
+                <h2>Detenciones por Dependencia</h2>   
+              </div>  
+
+              <mat-form-field >
+                  <mat-label>UNIDAD PENAL NRO 9 PASO DE LOS LIBRES:</mat-label>
+                  <input matInput placeholder="Apellido" value={{total_por_dependencia9}}>
+              </mat-form-field>
+
+              <mat-form-field >
+                  <mat-label>COMISARÍA 2da. - CURUZU CUATIA	:</mat-label>
+                  <input matInput placeholder="fecha de nacimiento" value={{total_por_dependencia23}}>
+              </mat-form-field>
+              
+              <mat-form-field >
+                  <mat-label>COMISARÍA 1ra. ALCAIDÍA - CURUZU CUATIA :</mat-label>
+                  <input matInput placeholder="dependencia" value={{total_por_dependencia23}}>
+              </mat-form-field>
+
+           
+
+           
+          
+              <button mat-raised-button color="primary" >Guardar Reporte</button>
+  
+          </div>
+  </mat-card>
+</div>
+
+    <!-- <div class="container">
      
       <div fxflex="70" style="flex: 1 1 70%; box-sizing: border-box; max-width: 70%;"> 
         <div class="container-title">
@@ -61,6 +114,6 @@
 
     
 
-    </div>
+    </div> -->
 
 

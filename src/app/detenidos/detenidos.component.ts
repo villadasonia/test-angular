@@ -54,11 +54,10 @@ export class DetenidosComponent  {
     this.httpApiService.getDetenciones()
     .subscribe((data)=>{
     this.detenciones=data
-    console.log(this.detenciones.length)
+    
+    
     })
-    let countRT = this.detenciones.length;
-    return countRT;
-    {console.log(countRT)}
+ 
 
    }
 

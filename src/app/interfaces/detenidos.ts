@@ -13,6 +13,7 @@ export interface Detenidos{
     }
 
     dependencia:{
+        dependencia_id:number;
         descripcion:string;
     }
     
