@@ -33,7 +33,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 import {DatePipe} from './datedesc.pipe';
-import { ReportesComponent } from './reportes/reportes.component'
+import { ReportesComponent } from './reportes/reportes.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -73,7 +75,8 @@ import { ReportesComponent } from './reportes/reportes.component'
     MatTooltipModule,
     MatChipsModule,   
 
-    OrderModule
+    OrderModule,
+    ReactiveFormsModule,
     
   ],
   providers: [],

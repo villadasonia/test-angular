@@ -58,9 +58,7 @@ export class DetenidosComponent  {
     this.httpApiService.getDetenciones()
     .subscribe((data)=>{
     this.detenciones=data;
-    this.edad=this.detenciones.map( i=> this.httpApiService.CalculateAge(i.persona.fecha_nacimiento)
-    )
-
+    this.edad=this.detenciones.map( i=> this.httpApiService.CalculateAge(i.persona.fecha_nacimiento))
     
     
     })

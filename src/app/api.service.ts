@@ -11,7 +11,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 export class ApiService {
   
 
-  private detalleUrl ='http://localhost:4200/detalle-detenido'
+  // private detalleUrl ='http://localhost:4200/detalle-detenido'
 
   constructor(private httpClient: HttpClient ) { }
  

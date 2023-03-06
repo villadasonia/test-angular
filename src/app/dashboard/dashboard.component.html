@@ -19,7 +19,7 @@
 
               <mat-form-field >
                   <mat-label>Detencion más Reciente</mat-label>
-                  <input matInput  value=>
+                  <input matInput  value={{detenciones_recientes}}>
               </mat-form-field>
 
               <div class="container-title">
@@ -43,8 +43,8 @@
               
               <mat-form-field *ngIf="this.click==true">
                 <mat-label>Observaciones :</mat-label>
-                <textarea matInput placeholder="observaciones" required id="observaciones"  type="text" ng-model="observaciones"></textarea>
-                <!-- <input matInput placeholder="observaciones" required id="observaciones" name="observaciones" type="text"value={{observaciones}}> -->
+                <!-- <textarea matInput placeholder="observaciones" formControlName="observaciones"  value={{observaciones}}></textarea> -->
+                <!-- <input matInput placeholder="observaciones" required id="observaciones" name="observaciones" type="text" value={{observaciones}}> -->
               </mat-form-field>
 
               
